@@ -3,6 +3,7 @@ import BattleScreen from "./Screens/BattleScreen";
 import ChoiseScreen from "./Screens/ChoiseScreen";
 import { useRef } from "react";
 import { result } from "./utils";
+import styles from "./game.module.css"
 
 
 
@@ -30,10 +31,11 @@ export default function Game() {
 
     return (
         <>
-            <div>
-                <h1>Текущий счёт: {points.current}</h1>
+            <div className={styles.title}>
+                <span className={styles.content}>КАМЕНЬ <br/> НОЖНИЦЫ <br/> БУМАГА</span>
+                <span className={styles.content}>Текущий счёт: {points.current}</span>
             </div>
-            {setScreen()};
+            {setScreen()}
         </>
     )
 }

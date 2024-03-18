@@ -1,0 +1,13 @@
+.title {
+    border: 2px white solid;
+    border-radius: 30px;
+    width: 60vw;
+    height: 15vh;
+    align-content: center;
+}
+
+.content {
+    display: inline-block;
+    margin-top: 1vw;
+    margin-left: 1vw;
+}
