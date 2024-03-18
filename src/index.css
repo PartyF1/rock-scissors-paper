@@ -8,6 +8,7 @@ body {
   background-image: url('../public/background.jpg');
   display: flex;
   justify-content: center;
+  align-items: center;
   color: aliceblue;
 }
 

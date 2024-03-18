@@ -33,7 +33,7 @@ export default function Game() {
         <>
             <div className={styles.title}>
                 <span className={styles.content}>КАМЕНЬ <br/> НОЖНИЦЫ <br/> БУМАГА</span>
-                <span className={styles.content}>Текущий счёт: {points.current}</span>
+                <span className={styles.counter}>CЧЁТ <br/> {points.current}</span>
             </div>
             {setScreen()}
         </>

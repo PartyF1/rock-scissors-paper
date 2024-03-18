@@ -8,7 +8,6 @@ export default function ChoiseScreen(props) {
 
     return (
         <>
-            <h1>Кликни на своего бойца, чтобы начать игру</h1>
             <span onClick={() => setPlayerAttack("scissors")}>
                 <Scissors />
             </span>
