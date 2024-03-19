@@ -1,5 +1,6 @@
-import styles from "./screens.module.css"
+import styles from "./screens.module.scss"
 import Attack from "../Attacks/Attack";
+import { WinnerWindow } from "./WinnerWindow";
 
 
 export default function BattleScreen(props) {
@@ -12,20 +13,14 @@ export default function BattleScreen(props) {
                     <Attack attack={playerAttack}/>
                 </div>
                 <div>
-                    {winner === "player" ?
-                        <h1>Вы победили!</h1> :
-                        winner === "computer" ?
-                            <h1>Вы проиграли!</h1> :
-                            <h1>Ничья!</h1>}
+                    <WinnerWindow winner={winner}></WinnerWindow>
                     <button onClick={() => setPlayerAttack('')}>Ишче раз?</button>
                 </div>
                 <div>
                     <h1>Таки компуктер!</h1>
                     <Attack attack={computerAttack}/>
                 </div>
-            </div>
-
-            
+            </div>   
         </>
     )
 }

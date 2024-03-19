@@ -1,5 +1,6 @@
 import { ROCK, SCISSORS, PAPER } from "../constants";
-import styles from "./button.module.css"
+import styles from "./button.module.scss"
+
 
 
 export default function Attack({attack}) {

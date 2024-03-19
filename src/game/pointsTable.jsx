@@ -1,4 +1,4 @@
-import styles from "./game.module.css"
+import styles from "./game.module.scss"
 
 export function PointsTable({points}) {
     return (
