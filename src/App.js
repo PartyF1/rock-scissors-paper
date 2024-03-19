@@ -4,7 +4,7 @@ import Game from './game/Game';
 export default function App() {
   return (
     <div>
-      <Game></Game>
+      <Game/>
     </div>
   )
 }

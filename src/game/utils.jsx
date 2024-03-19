@@ -1,43 +1,46 @@
-export function getWinner(playerAttack, computerAttack) {
+import { COMPUTER, PAPER, PLAYER, ROCK, SCISSORS } from "./constants";
+
+function getWinner(playerAttack, computerAttack) {
     if (playerAttack === computerAttack) {
         return null;
     } else {
         switch (playerAttack) {
-            case "scissors": {
-                return computerAttack === 'rock' ? "computer" : "player";
+            case SCISSORS: {
+                return computerAttack === ROCK ? COMPUTER : PLAYER;
             }
-            case "rock": {
-                return computerAttack === 'paper' ? "computer" : "player";
+            case ROCK: {
+                return computerAttack === PAPER ? COMPUTER : PLAYER;
             }
-            case "paper": {
-                return computerAttack === 'scissors' ? "computer" : "player";
+            case PAPER: {
+                return computerAttack === SCISSORS ? COMPUTER : PLAYER;
             }
         }
     }
 }
 
-export function result(playerAttack, computerAttack, points) {
-    const attack = Math.floor(Math.random() * (3) + 1);
-    switch (attack) {
+function getComputerAttack() {
+    switch (Math.floor(Math.random() * (3) + 1)) {
         case 1: {
-            computerAttack.current = "paper";
-            break;
+            return PAPER;
         }
         case 2: {
-            computerAttack.current = "scissors";
-            break;
+            return SCISSORS;
         }
         case 3: {
-            computerAttack.current = "rock";
-            break;
+            return ROCK;
         }
-        default: break;
+        default: return;
     }
-    const winner = getWinner(playerAttack, computerAttack.current);
-    if (winner === "player") {
-        points.current++;
-    } else if (winner === "computer") {
-        points.current--;
+}
+
+
+export function getResult(playerAttack, points) {
+    const computerAttack = getComputerAttack()
+    const winner = getWinner(playerAttack, computerAttack);
+    if (winner === PLAYER) {
+        points++;
+    } else if (winner === COMPUTER) {
+        points--;
     }
-    return winner;
+    return {points: points, winner: winner, computerAttack: computerAttack};
 }

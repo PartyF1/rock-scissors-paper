@@ -1,22 +1,20 @@
-import Scissors from "../Attacks/Scissors"
-import Rock from "../Attacks/Rock"
-import Paper from "../Attacks/Paper"
-import styles from "../Attacks/button.module.css"
+import { PAPER, ROCK, SCISSORS } from "../constants";
+import Attack from "../Attacks/Attack";
 
 export default function ChoiseScreen(props) {
     const { setPlayerAttack } = props;
 
     return (
         <>
-            <span onClick={() => setPlayerAttack("scissors")}>
-                <Scissors />
-            </span>
-            <span onClick={() => setPlayerAttack('paper')}>
-                <Paper />
-            </span>
-            <span onClick={() => setPlayerAttack('rock')}>
-                <Rock />
-            </span>
+            <div onClick={() => setPlayerAttack(SCISSORS)}>
+                <Attack attack={SCISSORS}/>
+            </div>
+            <div onClick={() => setPlayerAttack(PAPER)}>
+                <Attack attack={PAPER}/>
+            </div>
+            <div onClick={() => setPlayerAttack(ROCK)}>
+                <Attack attack={ROCK}/>
+            </div>
         </>
     )
 }

@@ -1,4 +1,4 @@
-.title {
+.pointsTable {
     border: 2px white solid;
     border-radius: 30px;
     width: 60vw;
@@ -12,6 +12,7 @@
     display: inline-block;
     margin-top: 1vw;
     margin-left: 1vw;
+    width: 5vw;
 }
 
 .counter {

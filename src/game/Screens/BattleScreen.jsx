@@ -1,19 +1,15 @@
-import Scissors from "../Attacks/Scissors";
-import Rock from "../Attacks/Rock"
-import Paper from "../Attacks/Paper"
 import styles from "./screens.module.css"
+import Attack from "../Attacks/Attack";
 
 
 export default function BattleScreen(props) {
     const { playerAttack, computerAttack, winner, setPlayerAttack } = props;
     return (
         <>
-            <span className={styles.battle}>
+            <div className={styles.battle}>
                 <div>
                     <h1>Таки игрок!</h1>
-                    {playerAttack === "rock" ? <Rock /> :
-                        playerAttack === "paper" ? <Paper /> :
-                            <Scissors />}
+                    <Attack attack={playerAttack}/>
                 </div>
                 <div>
                     {winner === "player" ?
@@ -25,11 +21,9 @@ export default function BattleScreen(props) {
                 </div>
                 <div>
                     <h1>Таки компуктер!</h1>
-                    {computerAttack === "rock" ? <Rock /> :
-                        computerAttack === "paper" ? <Paper /> :
-                            <Scissors />}
+                    <Attack attack={computerAttack}/>
                 </div>
-            </span>
+            </div>
 
             
         </>
