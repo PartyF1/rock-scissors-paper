@@ -9,15 +9,15 @@ export default function BattleScreen(props) {
         <>
             <div className={styles.battle}>
                 <div>
-                    <h1>Таки игрок!</h1>
+                    <h2>Таки игрок!</h2>
                     <Attack attack={playerAttack}/>
                 </div>
                 <div>
-                    <WinnerWindow winner={winner}></WinnerWindow>
+                    <WinnerWindow winner={winner}/>
                     <button onClick={() => setPlayerAttack('')}>Ишче раз?</button>
                 </div>
                 <div>
-                    <h1>Таки компуктер!</h1>
+                    <h2>Таки компуктер!</h2>
                     <Attack attack={computerAttack}/>
                 </div>
             </div>   
